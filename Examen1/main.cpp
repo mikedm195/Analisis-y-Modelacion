@@ -11,18 +11,21 @@ int main(int argc, const char * argv[]) {
     Product* sacher = creador->createProduct(2,2);
     Product* imposible = creador->createProduct(3,2);
 
+    Product* sacherClon = sacher->clonar();
+
     Aggregate<Product*> p;
     p.add(tresLeches);
     p.add(sacher);
     p.add(imposible);
+    p.add(sacherClon);
     Iterator<Product*>* i;
 
     //Muestra todos los productos
     for(i = p.getIterator(); i->hasNext(); )
     {
-        cout << (i->next())->getDatos() << endl;
+        cout << (i->next())->getDatos();
     }
-
+    cout << endl;
     //busca un pastel en particular
     for(i = p.getIterator(); i->hasNext(); )
     {

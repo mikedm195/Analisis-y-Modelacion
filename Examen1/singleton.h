@@ -27,7 +27,7 @@ public:
     virtual void horneado() = 0;
     virtual void decorado() = 0;
     virtual void empacado() = 0;
-    //virtual Personaje* clonar() = 0;
+    virtual Product* clonar() = 0;
 
 };
 
@@ -42,7 +42,7 @@ public:
 };
 
 
-class tresLeches : public Product
+class tresLeches : public ClonPastel<tresLeches>
 {
 
     friend class ConcreteCreator;
@@ -57,7 +57,7 @@ private:
     tresLeches(){}
 };
 
-class sacher : public Product
+class sacher : public ClonPastel<sacher>
 {
     friend class ConcreteCreator;
 
@@ -73,7 +73,7 @@ private:
 
 };
 
-class imposible : public Product
+class imposible : public ClonPastel<imposible>
 {
     friend class ConcreteCreator;
 
