@@ -5,9 +5,9 @@
 using namespace std;
 
 int main(){
-    
+
     Fabrica* fabrica = new ConcreteFabrica();
-    Computadora* miProducto = fabrica->createProduct(1);
+    Computadora* miProducto = fabrica->createProduct("Laptop");
 
     return 0;
 }
